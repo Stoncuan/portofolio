@@ -653,7 +653,7 @@ footer {
 @media (max-width: 512px) {
   .gambarProfil {
     width: 340px;
-    algin-items: center;
+
     left: 0;
   }
 }
