@@ -649,3 +649,11 @@ footer {
   background: var(--add);
   color: #fff;
 }
+
+@media (max-width: 512px) {
+  .gambarProfil {
+    width: 340px;
+    algin-items: center;
+    left: 0;
+  }
+}
