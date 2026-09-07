@@ -48,29 +48,83 @@
           <a href="#experience" class="nav-link-custom">pengalaman</a>
           <a href="#contact" class="nav-link-custom">kontak</a>
         </div>
-        <span class="btn-cv d-none d-md-inline-block"
-          ></i>Web Developer</span
-        >
+        <div class="d-flex align-items-center gap-2">
+          <span class="btn-cv d-none d-md-inline-block">Web Developer</span>
+          <button
+            class="navbar-toggle-btn d-lg-none"
+            id="navToggleBtn"
+            type="button"
+            aria-label="Buka menu navigasi"
+            aria-expanded="false"
+            aria-controls="mobileNavModal"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
       </div>
     </nav>
+
+    <!-- MOBILE NAV MODAL -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+      <div
+        class="mobile-nav-modal"
+        id="mobileNavModal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu navigasi"
+      >
+        <div class="mobile-nav-modal-bar">
+          <span class="mobile-nav-dot"></span>
+          <span class="mobile-nav-dot"></span>
+          <span class="mobile-nav-dot"></span>
+          <span class="mobile-nav-path">menu.sh</span>
+          <button
+            class="mobile-nav-close"
+            id="mobileNavClose"
+            type="button"
+            aria-label="Tutup menu"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="mobile-nav-body">
+          <a href="#about" class="mobile-nav-link" data-nav-link
+            ><span class="mobile-nav-num">01</span>tentang</a
+          >
+          <a href="#skills" class="mobile-nav-link" data-nav-link
+            ><span class="mobile-nav-num">02</span>skill</a
+          >
+          <a href="#projects" class="mobile-nav-link" data-nav-link
+            ><span class="mobile-nav-num">03</span>proyek</a
+          >
+          <a href="#experience" class="mobile-nav-link" data-nav-link
+            ><span class="mobile-nav-num">04</span>pengalaman</a
+          >
+          <a href="#contact" class="mobile-nav-link" data-nav-link
+            ><span class="mobile-nav-num">05</span>kontak</a
+          >
+        </div>
+      </div>
+    </div>
 
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="container">
         <div class="row align-items-center g-5">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="eyebrow">status: online</div>
-            <h1>
-              Membangun sistem,<br />baris demi
-              <span class="accent">baris.</span>
+          <div class="col-lg-6">
+            <div class="eyebrow" data-aos="fade-down">status: online</div>
+            <h1 data-aos="fade-up" data-aos-delay="80">
+              <span id="typed-heading"></span>
             </h1>
-            <div class="role-line"><span id="typed-role"></span></div>
-            <p class="lead-text mt-3">
+            <div class="role-line" data-aos="fade-up" data-aos-delay="160">
+              <span id="typed-role"></span>
+            </div>
+            <p class="lead-text mt-3" data-aos="fade-up" data-aos-delay="220">
               Full-stack web developer yang terbiasa merancang, membangun,
               sekaligus merawat sistem informasi dari nol mulai dari database,
               autentikasi, sampai antarmuka yang enak dipakai sehari-hari.
             </p>
-            <div class="d-flex flex-wrap gap-3 mt-4">
+            <div class="d-flex flex-wrap gap-3 mt-4" data-aos="fade-up" data-aos-delay="280">
               <a href="#projects" class="btn-primary-custom"
                 ><i class="bi bi-code-slash"></i>Lihat Proyek</a
               >
@@ -79,13 +133,13 @@
               >
             </div>
             <div class="diff-tags">
-              <span class="diff-tag">Laravel</span>
-              <span class="diff-tag">CodeIgniter</span>
-              <span class="diff-tag">Livewire</span>
-              <span class="diff-tag">Vite</span>
-              <span class="diff-tag">Bootstrap</span>
-              <span class="diff-tag">MySQL</span>
-              <span class="diff-tag">JavaScript</span>
+              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="320">Laravel</span>
+              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="360">CodeIgniter</span>
+              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="400">Livewire</span>
+              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="440">Vite</span>
+              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="480">Bootstrap</span>
+              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="520">MySQL</span>
+              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="560">JavaScript</span>
             </div>
           </div>
 
@@ -147,14 +201,14 @@
       <div class="container">
         <div class="row g-5 align-items-center">
           <div class="col-lg-4" data-aos="fade-right">
-          <div class="about-photo" >
-            <img class="gambarProfil" src="Img/profil.png" width="400"  alt="Foto Profil Stoncuan">
+          <div class="about-photo">
+            <img class="gambarProfil" src="Img/profil.png" alt="Foto Profil Stoncuan">
           </div>
       </div>
-          <div class="col-lg-8" data-aos="fade-left">
-            <div class="eyebrow">tentang saya</div>
-            <h2 class="section-title">Dari Sekolah Menengah Kejuruan ke production server</h2>
-            <p class="section-sub" style="max-width: 100%">
+          <div class="col-lg-8">
+            <div class="eyebrow" data-aos="fade-up">tentang saya</div>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Dari Sekolah Menengah Kejuruan ke production server</h2>
+            <p class="section-sub" style="max-width: 100%" data-aos="fade-up" data-aos-delay="160">
               Saya menekuni pengembangan web sejak masa SMK dan sekarang
               aktif menangani beberapa sistem informasi institusional mulai
               dari sistem registrasi, manajemen surat, manajemen sistem keuangan, validasi surat, sistem peminjaman barang, hingga pengelolaan data
@@ -164,13 +218,13 @@
             </p>
             <div class="row g-3 mt-3">
               <div class="col-6 col-md-4">
-                <div class="stat-card">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="220">
                   <div class="k">"sistem_aktif"</div>
                   <div class="v"><span>10</span></div>
                 </div>
               </div>
               <div class="col-6 col-md-4">
-                <div class="stat-card">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="280">
                   <div class="k">"tahun_pengalaman"</div>
                   <div class="v"><span>2</span>+</div>
                 </div>
@@ -204,13 +258,13 @@
             <div class="skill-card">
               <h4><i class="bi bi-hdd-network"></i>Backend</h4>
               <div class="skill-list">
-                <div class="skill-chip">
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="0">
                   <i class="bi bi-filetype-php"></i>PHP
                 </div>
-                <div class="skill-chip">
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="60">
                   <i class="bi bi-hexagon-fill"></i>Laravel
                 </div>
-                <div class="skill-chip">
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="120">
                   <i class="bi bi-code-square"></i>CodeIgniter
                 </div>
                 
@@ -222,16 +276,16 @@
             <div class="skill-card">
               <h4><i class="bi bi-layout-text-window-reverse"></i>Frontend</h4>
               <div class="skill-list">
-                <div class="skill-chip">
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="0">
                   <i class="bi bi-filetype-html"></i>HTML & CSS
                 </div>
-                <div class="skill-chip">
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="60">
                   <i class="bi bi-filetype-js"></i>JavaScript
                 </div>
-                <div class="skill-chip">
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="120">
                   <i class="bi bi-bootstrap-fill"></i>Bootstrap 5
                 </div>
-                <div class="skill-chip">
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="180">
                   <i class="bi bi-lightning-charge-fill"></i>Livewire
                 </div>
               </div>
@@ -242,14 +296,14 @@
             <div class="skill-card">
               <h4><i class="bi bi-database"></i>Database & Tools</h4>
               <div class="skill-list">
-                <div class="skill-chip">
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="0">
                   <i class="bi bi-database-fill-gear"></i>MySQL
                 </div>
-                <div class="skill-chip"><i class="bi bi-git"></i>Git</div>
-                 <div class="skill-chip"><i class="bi bi-box-seam"></i>Composer</div>
-                <div class="skill-chip"><i class="bi bi-boxes"></i>npm</div>
-                <div class="skill-chip"><i class="bi bi-send"></i>Postman</div>
-                <div class="skill-chip">
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="50"><i class="bi bi-git"></i>Git</div>
+                 <div class="skill-chip" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-box-seam"></i>Composer</div>
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="150"><i class="bi bi-boxes"></i>npm</div>
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-send"></i>Postman</div>
+                <div class="skill-chip" data-aos="fade-up" data-aos-delay="250">
                   <i class="bi bi-terminal-fill"></i>Linux / Nginx / Apache HTTP Server
                 </div>
               </div>
@@ -613,28 +667,28 @@
           pengembangan sistem. Isi form di samping atau hubungi lewat kanal berikut.
         </p>
         <div class="social-row mt-4">
-          <a href="https://github.com/stoncuan" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/stoncuan" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://wa.me/6285244209946" target="_blank" rel="noopener" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-          <a href="mailto:smacpalbawangun@gmail.com" target="_blank" title="Email"><i class="bi bi-envelope"></i></a>
+          <a href="https://github.com/stoncuan" target="_blank" title="GitHub" data-aos="zoom-in" data-aos-delay="0"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/stoncuan" target="_blank" title="LinkedIn" data-aos="zoom-in" data-aos-delay="60"><i class="bi bi-linkedin"></i></a>
+          <a href="https://wa.me/6285244209946" target="_blank" rel="noopener" title="WhatsApp" data-aos="zoom-in" data-aos-delay="120"><i class="bi bi-whatsapp"></i></a>
+          <a href="mailto:smacpalbawangun@gmail.com" target="_blank" title="Email" data-aos="zoom-in" data-aos-delay="180"><i class="bi bi-envelope"></i></a>
         </div>
       </div>
       <div class="col-lg-7" data-aos="fade-left">
         <div class="contact-card">
           <form id="contactForm">
-            <div class="mb-3">
+            <div class="mb-3" data-aos="fade-up" data-aos-delay="0">
               <label class="d-block">NAMA</label>
               <input id="contactName" type="text" class="form-control form-control-custom" placeholder="nama_anda" required>
             </div>
-            <div class="mb-3">
+            <div class="mb-3" data-aos="fade-up" data-aos-delay="80">
               <label class="d-block">EMAIL</label>
               <input id="contactEmail" type="email" class="form-control form-control-custom" placeholder="email@contoh.com" required>
             </div>
-            <div class="mb-3">
+            <div class="mb-3" data-aos="fade-up" data-aos-delay="160">
               <label class="d-block">PESAN</label>
               <textarea id="contactMessage" class="form-control form-control-custom" rows="4" placeholder="Tulis pesan di sini..." required></textarea>
             </div>
-            <button type="submit" class="btn-send"><i class="bi bi-send me-1"></i>Kirim Pesan</button>
+            <button type="submit" class="btn-send" data-aos="fade-up" data-aos-delay="240"><i class="bi bi-send me-1"></i>Kirim Pesan</button>
           </form>
         </div>
       </div>
@@ -645,6 +699,7 @@
     <footer>
       <div
         class="container d-flex flex-wrap justify-content-between align-items-center gap-2"
+        data-aos="fade-up"
       >
         <div>© 2026 Stoncuan.</div>
         <div>console.log("terima kasih sudah mampir!")</div>
@@ -656,6 +711,9 @@
     ></a>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/AOS/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
      <script>
   // Kirim form kontak ke WhatsApp — taruh paling atas, wajib jalan duluan
   const contactForm = document.getElementById('contactForm');
@@ -689,6 +747,23 @@
   });
 
   try {
+    if (document.getElementById('typed-heading')) {
+      new Typed('#typed-heading', {
+        strings: [
+          'Membangun sistem,<br />baris demi <span class="accent">baris.</span>'
+        ],
+        typeSpeed: 55,
+        backSpeed: 30,
+        backDelay: 2200,
+        startDelay: 200,
+        smartBackspace: false,
+        contentType: 'html',
+        loop: true
+      });
+    }
+  } catch (err) { console.warn('Typed.js heading gagal dimuat:', err); }
+
+  try {
     if (document.getElementById('typed-role')) {
       new Typed('#typed-role', {
         strings: [
@@ -704,10 +779,39 @@
       });
     }
   } catch (err) { console.warn('Typed.js gagal dimuat:', err); }
+
+  // --- Mobile nav modal ---
+  const navToggleBtn = document.getElementById('navToggleBtn');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+  const mobileNavClose = document.getElementById('mobileNavClose');
+  const mobileNavLinks = document.querySelectorAll('[data-nav-link]');
+
+  function openMobileNav() {
+    mobileNavOverlay.classList.add('show');
+    navToggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+  }
+  function closeMobileNav() {
+    mobileNavOverlay.classList.remove('show');
+    navToggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  }
+
+  if (navToggleBtn) navToggleBtn.addEventListener('click', openMobileNav);
+  if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileNav);
+  if (mobileNavOverlay) {
+    mobileNavOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileNavOverlay) closeMobileNav();
+    });
+  }
+  mobileNavLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileNav();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992) closeMobileNav();
+  });
 </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/AOS/2.3.4/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
     
   </body>
 </html>
