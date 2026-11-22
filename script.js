@@ -102,7 +102,7 @@ const PROJECTS = [
   },
   {
     t: "SIKAT UNIPA",
-    v: "v5.1.0",
+    v: "v6.0.0",
     y: 2025,
     i: "Img/sikat.png",
     u: "https://sikat.unipa.ac.id/login",
