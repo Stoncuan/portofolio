@@ -1,1160 +1,153 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="img/logo.png" />
-    <title>Stoncuan Macpal Bawangun Full-Stack Web Developer</title>
-    <meta
-      name="description"
-      content="Portofolio pribadi full-stack web developer: Laravel, CodeIgniter, Livewire, Bootstrap, MySQL."
-    />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Bootstrap 5 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Tabler Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    />
-
-    <!-- AOS (scroll animation) -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar-custom">
-      <div class="container d-flex align-items-center justify-content-between">
-        <a href="#home" class="brand"
-          >~/<span>Stoncuan Macpal Bawangun</span></a
-        >
-        <div class="d-none d-lg-flex align-items-center">
-          <a href="#about" class="nav-link-custom">tentang</a>
-          <a href="#skills" class="nav-link-custom">skill</a>
-          <a href="#projects" class="nav-link-custom">proyek</a>
-          <a href="#experience" class="nav-link-custom">pengalaman</a>
-          <a href="#contact" class="nav-link-custom">kontak</a>
-        </div>
-        <div class="d-flex align-items-center gap-2">
-          <span class="btn-cv d-none d-md-inline-block">Web Developer</span>
-          <button
-            class="navbar-toggle-btn d-lg-none"
-            id="navToggleBtn"
-            type="button"
-            aria-label="Buka menu navigasi"
-            aria-expanded="false"
-            aria-controls="mobileNavModal"
-          >
-            <i class="bi bi-list"></i>
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- MOBILE NAV MODAL -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay">
-      <div
-        class="mobile-nav-modal"
-        id="mobileNavModal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Menu navigasi"
-      >
-        <div class="mobile-nav-modal-bar">
-          <span class="mobile-nav-dot"></span>
-          <span class="mobile-nav-dot"></span>
-          <span class="mobile-nav-dot"></span>
-          <span class="mobile-nav-path">menu.sh</span>
-          <button
-            class="mobile-nav-close"
-            id="mobileNavClose"
-            type="button"
-            aria-label="Tutup menu"
-          >
-            <i class="bi bi-x-lg"></i>
-          </button>
-        </div>
-        <div class="mobile-nav-body">
-          <a href="#about" class="mobile-nav-link" data-nav-link
-            ><span class="mobile-nav-num">01</span>tentang</a
-          >
-          <a href="#skills" class="mobile-nav-link" data-nav-link
-            ><span class="mobile-nav-num">02</span>skill</a
-          >
-          <a href="#projects" class="mobile-nav-link" data-nav-link
-            ><span class="mobile-nav-num">03</span>proyek</a
-          >
-          <a href="#experience" class="mobile-nav-link" data-nav-link
-            ><span class="mobile-nav-num">04</span>pengalaman</a
-          >
-          <a href="#contact" class="mobile-nav-link" data-nav-link
-            ><span class="mobile-nav-num">05</span>kontak</a
-          >
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stoncuan Macpal Bawangun — Full-Stack Web Developer</title>
+  <meta name="description" content="Portofolio full-stack web developer: Laravel, CodeIgniter, Livewire, Bootstrap, MySQL." />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <meta name="color-scheme" content="light dark" />
+  <!-- Terapkan tema sebelum halaman tergambar agar tidak berkedip -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-in">
+      <a href="#home" class="brand">Stoncuan<span>.</span></a>
+      <nav class="menu" id="menu" aria-label="Navigasi utama">
+        <a href="#about">Tentang</a>
+        <a href="#skills">Skill</a>
+        <a href="#projects">Proyek</a>
+        <a href="#experience">Pengalaman</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <button id="themeBtn" class="theme-btn" type="button" aria-label="Ganti ke mode gelap" title="Ganti tema">
+        <i class="bi bi-moon-stars-fill icon-moon"></i>
+        <i class="bi bi-sun-fill icon-sun"></i>
+      </button>
+      <button id="navBtn" class="theme-btn burger" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="menu">
+        <i class="bi bi-list"></i>
+      </button>
     </div>
+  </header>
 
-    <!-- HERO -->
+  <main>
     <section class="hero" id="home">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6">
-            <div class="eyebrow" data-aos="fade-down">status: online</div>
-            <h1 data-aos="fade-up" data-aos-delay="80">
-              <span id="typed-heading"></span>
-            </h1>
-            <div class="role-line" data-aos="fade-up" data-aos-delay="160">
-              <span id="typed-role"></span>
-            </div>
-            <p class="lead-text mt-3" data-aos="fade-up" data-aos-delay="220">
-              Full-stack web developer yang terbiasa merancang, membangun,
-              sekaligus merawat sistem informasi dari nol mulai dari database,
-              autentikasi, sampai antarmuka yang enak dipakai sehari-hari.
-            </p>
-            <div
-              class="d-flex flex-wrap gap-3 mt-4"
-              data-aos="fade-up"
-              data-aos-delay="280"
-            >
-              <a href="#projects" class="btn-primary-custom"
-                ><i class="bi bi-code-slash"></i>Lihat Proyek</a
-              >
-              <a href="#contact" class="btn-ghost-custom"
-                ><i class="bi bi-chat-dots"></i>Hubungi Saya</a
-              >
-            </div>
-            <div class="diff-tags">
-              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="320"
-                >Laravel</span
-              >
-              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="360"
-                >CodeIgniter</span
-              >
-              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="400"
-                >Livewire</span
-              >
-              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="440"
-                >Vite</span
-              >
-              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="480"
-                >Bootstrap</span
-              >
-              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="520"
-                >MySQL</span
-              >
-              <span class="diff-tag" data-aos="zoom-in" data-aos-delay="560"
-                >JavaScript</span
-              >
-            </div>
+      <canvas id="particles" aria-hidden="true"></canvas>
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="kicker">Full-Stack Web Developer · UPA TIK UNIPA</p>
+          <h1>Sistem informasi kampus yang dipakai setiap hari, dibangun dari nol.</h1>
+          <p class="lead">Saya merancang database, menulis logika server, dan memoles antarmuka untuk surat-menyurat, keuangan, perpustakaan, hingga data kependudukan.</p>
+          <div class="cta">
+            <a href="#projects" class="btn btn-solid">Lihat proyek</a>
+            <a href="#contact" class="btn btn-line">Hubungi saya</a>
           </div>
+        </div>
+        <figure class="frame hero-frame carousel" id="carousel" tabindex="0" aria-roledescription="carousel" aria-label="Galeri proyek">
+          <div class="frame-bar"><i></i><i></i><i></i><span id="heroHost"></span></div>
+          <div class="slides" id="slides" aria-live="off"></div>
+          <div class="car-ctl">
+            <button id="prev" type="button" aria-label="Proyek sebelumnya"><i class="bi bi-chevron-left"></i></button>
+            <div class="track"><div class="bar" id="bar"></div></div>
+            <span class="count" id="count"></span>
+            <button id="next" type="button" aria-label="Proyek berikutnya"><i class="bi bi-chevron-right"></i></button>
+          </div>
+          <figcaption id="heroCap"></figcaption>
+        </figure>
+      </div>
+    </section>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-            <div class="terminal">
-              <div class="terminal-bar">
-                <span></span><span></span><span></span>
-                <span class="path">stoncuan@dev</span>
-              </div>
-              <div class="terminal-body">
-                <div>
-                  <span class="prompt">stoncuan@dev</span> ~$
-                  <span class="cmd">whoami</span>
-                </div>
-                <div class="out">&gt; Full-Stack Web Developer</div>
-                <br />
-                <div>
-                  <span class="prompt">stoncuan@dev</span> ~$
-                  <span class="cmd">cat stack.json</span>
-                </div>
-                <div>{</div>
-                <div>
-                  &nbsp;&nbsp;<span class="key">"backend"</span>: [<span
-                    class="str"
-                    >"Laravel"</span
-                  >, <span class="str">"CodeIgniter"</span>],
-                </div>
-                <div>
-                  &nbsp;&nbsp;<span class="key">"frontend"</span>: [<span
-                    class="str"
-                    >"Bootstrap"</span
-                  >, <span class="str">"Livewire"</span>],
-                </div>
-                <div>
-                  &nbsp;&nbsp;<span class="key">"database"</span>: [<span
-                    class="str"
-                    >"MySQL"</span
-                  >]
-                </div>
-                <div>}</div>
-                <br />
-                <div>
-                  <span class="prompt">stoncuan@dev</span> ~$
-                  <span class="cmd">./status.sh</span>
-                </div>
-                <div class="out">
-                  &gt; Siap kolaborasi &amp; terbuka untuk proyek baru<span
-                    class="cursor-blink"
-                  ></span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section id="about" class="sec">
+      <div class="wrap about">
+        <img class="photo" src="Img/profil.png" alt="Foto Stoncuan Macpal Bawangun" />
+        <div>
+          <h2>Mulai dari SMK, sekarang merawat sistem produksi</h2>
+          <p>Saya menekuni pengembangan web sejak SMK dan kini menangani sistem informasi institusional: registrasi, manajemen surat, keuangan, validasi surat, peminjaman barang, dan data kependudukan. Saya nyaman bekerja di semua lapisan, dari skema database sampai interaksi di browser.</p>
+          <dl class="stats">
+            <div><dt>Sistem aktif</dt><dd>14</dd></div>
+            <div><dt>Tahun pengalaman</dt><dd>2+</dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-4" data-aos="fade-right">
-            <div class="about-photo">
-              <img
-                class="gambarProfil"
-                src="Img/profil.png"
-                alt="Foto Profil Stoncuan"
-              />
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="eyebrow" data-aos="fade-up">tentang saya</div>
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">
-              Dari Sekolah Menengah Kejuruan ke production server
-            </h2>
-            <p
-              class="section-sub"
-              style="max-width: 100%"
-              data-aos="fade-up"
-              data-aos-delay="160"
-            >
-              Saya menekuni pengembangan web sejak masa SMK dan sekarang aktif
-              menangani beberapa sistem informasi institusional mulai dari
-              sistem registrasi, manajemen surat, manajemen sistem keuangan,
-              validasi surat, sistem peminjaman barang, hingga pengelolaan data
-              kependudukan. Saya senang bekerja di seluruh lapisan aplikasi:
-              merancang skema database, menulis logic di sisi server, sampai
-              memoles interaksi di sisi klien agar terasa cepat dan intuitif.
-            </p>
-            <div class="row g-3 mt-3">
-              <div class="col-6 col-md-4">
-                <div class="stat-card" data-aos="zoom-in" data-aos-delay="220">
-                  <div class="k">"sistem_aktif"</div>
-                  <div class="v"><span>14</span></div>
-                </div>
-              </div>
-              <div class="col-6 col-md-4">
-                <div class="stat-card" data-aos="zoom-in" data-aos-delay="280">
-                  <div class="k">"tahun_pengalaman"</div>
-                  <div class="v"><span>2</span>+</div>
-                </div>
-              </div>
-              <!-- <div class="col-6 col-md-4">
-                <div class="stat-card">
-                  <div class="k">"bug_terselesaikan"</div>
-                  <div class="v">∞</div>
-                </div>
-              </div> -->
-            </div>
-          </div>
+    <section id="skills" class="sec alt">
+      <div class="wrap">
+        <h2>Tools yang saya pakai</h2>
+        <p class="sub">Stack yang konsisten lintas proyek, dari sistem internal kampus sampai eksperimen pribadi.</p>
+        <div class="skills">
+          <div class="card"><h3>Backend</h3><ul><li>PHP</li><li>Laravel</li><li>CodeIgniter</li></ul></div>
+          <div class="card"><h3>Frontend</h3><ul><li>HTML &amp; CSS</li><li>JavaScript</li><li>Bootstrap 5</li><li>Livewire</li></ul></div>
+          <div class="card"><h3>Database &amp; tools</h3><ul><li>MySQL</li><li>Git</li><li>Composer</li><li>npm</li><li>Postman</li><li>Linux</li><li>Nginx</li><li>Apache</li></ul></div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="container">
-        <div class="eyebrow" data-aos="fade-up">// stack.json</div>
-        <h2 class="section-title" data-aos="fade-up">
-          Tools & bahasa yang saya kuasai
-        </h2>
-        <p class="section-sub mb-5" data-aos="fade-up">
-          Stack yang konsisten saya pakai lintas proyek dari sistem internal
-          kampus sampai eksperimen pribadi.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-md-4" data-aos="fade-up">
-            <div class="skill-card">
-              <h4><i class="bi bi-hdd-network"></i>Backend</h4>
-              <div class="skill-list">
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="0">
-                  <i class="bi bi-filetype-php"></i>PHP
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="60">
-                  <i class="bi bi-hexagon-fill"></i>Laravel
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="120">
-                  <i class="bi bi-code-square"></i>CodeIgniter
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-card">
-              <h4><i class="bi bi-layout-text-window-reverse"></i>Frontend</h4>
-              <div class="skill-list">
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="0">
-                  <i class="bi bi-filetype-html"></i>HTML & CSS
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="60">
-                  <i class="bi bi-filetype-js"></i>JavaScript
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="120">
-                  <i class="bi bi-bootstrap-fill"></i>Bootstrap 5
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="180">
-                  <i class="bi bi-lightning-charge-fill"></i>Livewire
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-card">
-              <h4><i class="bi bi-database"></i>Database & Tools</h4>
-              <div class="skill-list">
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="0">
-                  <i class="bi bi-database-fill-gear"></i>MySQL
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="50">
-                  <i class="bi bi-git"></i>Git
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="100">
-                  <i class="bi bi-box-seam"></i>Composer
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="150">
-                  <i class="bi bi-boxes"></i>npm
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bi bi-send"></i>Postman
-                </div>
-                <div class="skill-chip" data-aos="fade-up" data-aos-delay="250">
-                  <i class="bi bi-terminal-fill"></i>Linux / Nginx / Apache HTTP
-                  Server
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section id="projects" class="sec">
+      <div class="wrap">
+        <h2>Proyek yang sudah di-deploy</h2>
+        <p class="sub">Sistem yang pernah saya bangun dan rawat. Klik kartu untuk membuka versi live.</p>
+        <div class="filters" id="filters" role="group" aria-label="Filter proyek"></div>
+        <div class="grid" id="grid"></div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="container">
-        <div class="eyebrow" data-aos="fade-up">// release_log</div>
-        <h2 class="section-title" data-aos="fade-up">
-          Proyek yang sudah di-deploy
-        </h2>
-        <p class="section-sub mb-5" data-aos="fade-up">
-          Beberapa sistem yang pernah saya bangun dan rawat.
-        </p>
-
-        <div class="row g-4">
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/simkatmawa-unipa.png"
-                  alt="Tampilan SIMKATMAWA UNIPA, aplikasi manajemen kemahasiswaan berbasis web"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v1.0.0</span>
-                <span class="release-date float-end">2026</span>
-                <h4>SIMKATMAWA UNIPA</h4>
-                <p class="section-sub" style="max-width: 100%">
-                  SIMKATMAWA UNIPA (Sistem Informasi Kinerja dan Tata Kelola
-                  Kemahasiswaan Universitas Papua) adalah aplikasi web untuk
-                  mengelola dan mendokumentasikan kegiatan serta capaian
-                  kemahasiswaan di lingkungan UNIPA. Sistem ini mencatat data
-                  prestasi mahasiswa (Belmawa dan mandiri), rekognisi,
-                  sertifikasi, penyelenggaraan ajang, serta keterlibatan
-                  mahasiswa dan dosen pendamping, lengkap dengan unggahan
-                  dokumen pendukung seperti sertifikat, foto kegiatan, dan surat
-                  tugas.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Laravel</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">Livewire</span>
-                </div>
-                <div class="release-links">
-                  <a
-                    href="https://simkatmawa.unipa.ac.id/"
-                    target="_blank"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/perpustakaan-unipa.png"
-                  alt="Tampilan Perpustakaan UNIPA, aplikasi manajemen koleksi berbasis web"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v1.0.0</span>
-                <span class="release-date float-end">2026</span>
-                <h4>Perpustakaan UNIPA</h4>
-                <p class="section-sub" style="max-width: 100%">
-                  Web Perpustakaan UNIPA adalah aplikasi web layanan
-                  perpustakaan Universitas Papua yang menyediakan akses katalog
-                  koleksi, keanggotaan, buku tamu, dan peminjaman, serta
-                  mendukung ruang belajar dan kolaborasi bagi civitas akademika,
-                  yaitu mahasiswa, dosen, dan tenaga kependidikan. Aplikasi ini
-                  pada awalnya dikembangkan menggunakan INLISLite, kemudian
-                  diambil alih dan dikembangkan lebih lanjut oleh saya dengan
-                  CodeIgniter 4 dalam struktur modular agar lebih fleksibel,
-                  mudah dikelola.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">CodeIgniter 4</span>
-                  <span class="tech-badge">Bootstrap</span>
-                </div>
-                <div class="release-links">
-                  <a
-                    href="https://perpustakaan.unipa.ac.id/"
-                    target="_blank"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/eNadinUpaTIk.png"
-                  alt="Tampilan e-NADIN UPA TIK UNIPA, aplikasi manajemen surat elektronik berbasis web"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v2.0.0</span>
-                <span class="release-date float-end">2026</span>
-                <h4>E-NADIN UPA TIK UNIPA</h4>
-                <p class="section-sub" style="max-width: 100%">
-                  e-NADIN UPA TIK UNIPA adalah sistem manajemen dokumen dan
-                  persuratan elektronik yang dikembangkan oleh UPA TIK
-                  Universitas Papua untuk mengelola administrasi surat secara
-                  digital, mencakup surat masuk, surat keluar, surat keterangan,
-                  dan arsip dalam satu platform terpadu. Sistem ini dilengkapi
-                  penomoran surat otomatis, penyimpanan dokumen yang aman dengan
-                  akses terkontrol, manajemen hak akses berbasis peran, serta
-                  pencatatan log aktivitas pengguna.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Laravel</span>
-                  <span class="tech-badge">Livewire</span>
-                  <span class="tech-badge">Bootstrap</span>
-                </div>
-                <div class="release-links">
-                  <a
-                    href="https://enadin-tik.unipa.ac.id/login"
-                    target="_blank"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/validasi-surat-upa-tik.png"
-                  alt="Tampilan validasi surat dengan QR Code di UPA TIK UNIPA"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v1.0.0</span>
-                <span class="release-date float-end">2026</span>
-                <h4>VALIDASI SURAT UPA TIK UNIPA</h4>
-                <p class="section-sub" style="max-width: 100%">
-                  Validasi surat dengan QR Code di UPA TIK UNIPA adalah fitur
-                  untuk memastikan keaslian surat resmi yang diterbitkan secara
-                  digital. Setiap surat yang diterbitkan dilengkapi QR Code unik
-                  yang tercetak pada dokumen. Ketika QR Code dipindai
-                  menggunakan perangkat seluler, pengguna diarahkan ke halaman
-                  verifikasi yang menampilkan data surat dari sistem, seperti
-                  nomor surat, tanggal, perihal, penandatangan, dan status
-                  keabsahannya. Dengan begitu, pihak penerima dapat langsung
-                  memastikan bahwa surat tersebut benar-benar diterbitkan oleh
-                  UPA TIK UNIPA dan tidak dipalsukan atau diubah.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">CodeIgniter</span>
-                  <span class="tech-badge">Bootstrap</span>
-                </div>
-                <div class="release-links">
-                  <a
-                    href="https://tik-validasi.unipa.ac.id/auth"
-                    target="_blank"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/simduk.png"
-                  alt="Tampilan Sistem Informasi Manajemen Data Kependudukan"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v1.0.2</span>
-                <span class="release-date float-end">2026</span>
-                <h4>SIMDUK WONDAMA</h4>
-                <p class="section-sub" style="max-width: 100%">
-                  Sistem Informasi Manajemen Data Kependudukan merupakan Sistem
-                  pendataan penduduk untuk pemerintah daerah wondama, lengkap
-                  dengan manajemen hak akses, log aktivitas, dan dashboard
-                  statistik.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Laravel</span>
-                  <span class="tech-badge">Livewire</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">Chart.js</span>
-                </div>
-                <div class="release-links">
-                  <a href="https://wondama-dev.unipa.ac.id/" target="_blank"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img src="Img/sikat.png" alt="Sikat Unipa" />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v5.1.0</span>
-                <span class="release-date float-end">2025</span>
-                <h4>SIKAT UNIPA</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  Sistem Informasi Keuangan dan Akuntansi Terpadu Universitas
-                  Papua yang mengelola pencatatan, pelaporan, dan pengelolaan
-                  data keuangan serta akuntansi kampus secara digital dan
-                  terintegrasi.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Laravel</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">Chart.js</span>
-                </div>
-                <div class="release-links">
-                  <a target="_blank" href="https://sikat.unipa.ac.id/login"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img src="Img/kerjasama.png" alt="Kerjasama UNIPA" />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v5.1.0</span>
-                <span class="release-date float-end">2026</span>
-                <h4>Kerjasama UNIPA</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  Sistem berbasis web untuk mengelola dokumen kerjasama
-                  (MoU/MoA) antara Universitas Papua dengan mitra, baik instansi
-                  pemerintah, swasta, maupun perguruan tinggi lain. Aplikasi ini
-                  mencatat data mitra kerjasama, ruang lingkup kegiatan, jangka
-                  waktu berlaku, serta status kerjasama (aktif, akan berakhir,
-                  atau sudah berakhir).
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Laravel</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">Chart.js</span>
-                </div>
-                <div class="release-links">
-                  <a target="_blank" href="https://kerjasama.unipa.ac.id/login"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img src="Img/validasi.png" alt="validasi surat" />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v3.2.0</span>
-                <span class="release-date float-end">2026</span>
-                <h4>Validasi Surat Rektor UNIPA</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  Sistem Validasi Surat Rektor adalah layanan verifikasi
-                  keaslian dokumen resmi Universitas Papua berbasis QR Code,
-                  yang memungkinkan setiap surat bertanda tangan Rektor dapat
-                  dipastikan keasliannya secara cepat dan akurat.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Codeigniter</span>
-                  <span class="tech-badge">Bootstrap</span>
-                </div>
-                <div class="release-links">
-                  <a target="_blank" href="https://validasi.unipa.ac.id/"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/sibara.png"
-                  alt="Tampilan Sistem Informasi Manajemen Data Kependudukan"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v2.0.0</span>
-                <span class="release-date float-end">2025</span>
-                <h4>SIBARA UNIPA</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  SIBARA (Sistem Peminjaman Barang) adalah aplikasi berbasis web
-                  yang dikembangkan oleh UPA TIK Universitas Papua untuk
-                  mengelola proses peminjaman barang atau perangkat inventaris
-                  kantor (seperti proyektor, laptop, kabel, perangkat jaringan,
-                  dan lain-lain) secara digital.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Laravel</span>
-                  <span class="tech-badge">Bootstrap</span>
-                </div>
-                <div class="release-links">
-                  <a target="_blank" href="https://sibara.unipa.ac.id/login"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img src="Img/laporDiri.png" alt="lapor diri" />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v3.2.0</span>
-                <span class="release-date float-end">2024</span>
-                <h4>Lapor Diri PPG</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  Lapor diri PPG adalah proses registrasi ulang dan validasi
-                  berkas tahap awal yang wajib dilakukan oleh calon mahasiswa
-                  yang telah dinyatakan lolos seleksi. Tahapan ini bertujuan
-                  untuk mencatat secara resmi sebagai peserta didik di LPTK
-                  (Lembaga Pendidikan Tenaga Kependidikan) penyelenggara dan
-                  sistem PDDikti
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Laravel</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">Chart.js</span>
-                </div>
-                <div class="release-links">
-                  <a
-                    target="_blank"
-                    href="https://lapordiri-ppg.unipa.ac.id/login"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img src="Img/pengumuman.png" alt="pengumuman" />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v3.0.0</span>
-                <span class="release-date float-end">2025</span>
-                <h4>Pengumuman Data Center UNIPA</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  Pengumuman maintenance/gangguan data center (server UNIPA
-                  down/perbaikan)
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Codeigniter</span>
-                  <span class="tech-badge">Bootstrap</span>
-                </div>
-                <div class="release-links">
-                  <a href="#"><i class="bi bi-box-arrow-up-right"></i> Demo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/registrasi.png"
-                  alt="Tampilan Portal Registrasi dan Pengaduan Mahasiswa"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v7.1.0</span>
-                <span class="release-date float-end">2024</span>
-                <h4>Portal Registrasi & Pengaduan Mahasiswa</h4>
-                <div class="release-meta">
-                  <span class="plus">+ modul komplain</span> · CodeIgniter 4
-                </div>
-                <p class="section-sub" style="max-width: 100%">
-                  Portal registrasi layanan kampus (internet, email, e-learning)
-                  dengan sistem tiket pengaduan dan notifikasi ke email.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">CodeIgniter 4</span>
-                  <span class="tech-badge">MySQL</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">JavaScript</span>
-                </div>
-                <div class="release-links">
-                  <a target="_blank" href="https://registrasi.unipa.ac.id/"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/eNadinUnipa.png"
-                  alt="Tampilan Aplikasi Manajemen Surat Elektronik UNIPA"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v1.1.0</span>
-                <span class="release-date float-end">2026</span>
-                <h4>Aplikasi Manajemen Surat Elektronik UNIPA</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  Digitalisasi surat masuk, keluar, dan keterangan dengan
-                  penomoran otomatis dan penyimpanan file privat.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Laravel</span>
-                  <span class="tech-badge">Livewire</span>
-                  <span class="tech-badge">Bootstrap</span>
-                </div>
-                <div class="release-links">
-                  <a target="_blank" href="https://enadin.unipa.ac.id/login"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/eNadinFkip.png"
-                  alt="Tampilan aplikasi manajemen surat fkip unipa"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v1.0.0</span>
-                <span class="release-date float-end">2026</span>
-                <h4>Aplikasi Manajemen Surat Elektronik FKIP UNIPA</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  Sistem manajemen file dengan penyimpanan privat, autentikasi
-                  berbasis sesi, dan preview dokumen langsung dari browser.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">Laravel</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">Livewire</span>
-                </div>
-                <div class="release-links">
-                  <a
-                    target="_blank"
-                    href="https://enadin-fkip.unipa.ac.id/login"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/login_unipenet.png"
-                  alt="Tampilan aplikasi login unipenet"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v1.0.1</span>
-                <span class="release-date float-end">2024</span>
-                <h4>Web Login Unipenet</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  Dashboard login untuk sistem unipenet.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">HTML</span>
-                  <span class="tech-badge">CSS</span>
-                  <span class="tech-badge">JavaScript</span>
-                  <span class="tech-badge">Bootstrap</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="release-card">
-              <div class="release-thumb">
-                <img
-                  src="Img/landing_page_simunipa.png"
-                  alt="Tampilan aplikasi manajemen surat fkip unipa"
-                />
-              </div>
-              <div class="release-body">
-                <span class="release-tag">v1.0.0</span>
-                <span class="release-date float-end">2026</span>
-                <h4>Landing Page Simunipa</h4>
-
-                <p class="section-sub" style="max-width: 100%">
-                  Landing page untuk sistem Simunipa.
-                </p>
-                <div class="mb-3">
-                  <span class="tech-badge">HTML</span>
-                  <span class="tech-badge">CSS</span>
-                  <span class="tech-badge">JavaScript</span>
-                </div>
-                <div class="release-links">
-                  <a target="_blank" href="https://simunipa.unipa.ac.id/"
-                    ><i class="bi bi-box-arrow-up-right"></i> Demo</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section id="experience" class="sec alt">
+      <div class="wrap narrow">
+        <h2>Pengalaman</h2>
+        <article class="job">
+          <time>2024 — sekarang</time>
+          <h3>IT Administrator &amp; Full-Stack Developer</h3>
+          <p class="org">UPA Teknologi Informasi dan Komunikasi UNIPA</p>
+          <p>Mengembangkan dan merawat sistem informasi institusional, mulai dari perancangan database dan keamanan aplikasi sampai deployment.</p>
+        </article>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="container">
-        <div class="eyebrow" data-aos="fade-up">// git log --pengalaman</div>
-        <h2 class="section-title mb-5" data-aos="fade-up">
-          Perjalanan singkat
-        </h2>
-
-        <div class="gitlog">
-          <div class="log-item" data-aos="fade-up">
-            <span class="log-hash">#a1b2c3d</span>
-            <span class="log-date">2024 — sekarang</span>
-            <div class="log-role">IT Administrator & Full-Stack Developer</div>
-            <div class="log-org">
-              UPA Teknologi Informasi dan Komunikasi UNIPA
-            </div>
-            <p class="section-sub" style="max-width: 100%">
-              Mengembangkan dan merawat beberapa sistem informasi institusional,
-              mulai dari perancangan database, keamanan aplikasi, hingga
-              deployment.
-            </p>
+    <section id="contact" class="sec">
+      <div class="wrap contact">
+        <div>
+          <h2>Mari berkolaborasi</h2>
+          <p class="sub">Terbuka untuk diskusi proyek, kolaborasi, atau bertukar ide soal pengembangan sistem. Pesan dari form akan dibuka di WhatsApp.</p>
+          <div class="social">
+            <a href="https://github.com/stoncuan" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/stoncuan" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/6285244209946" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a href="mailto:smacpalbawangun@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
           </div>
         </div>
+        <form id="contactForm" class="card form">
+          <label>Nama<input id="cName" type="text" autocomplete="name" required /></label>
+          <label>Email<input id="cEmail" type="email" autocomplete="email" required /></label>
+          <label>Pesan<textarea id="cMsg" rows="4" required></textarea></label>
+          <button type="submit" class="btn btn-solid">Kirim lewat WhatsApp</button>
+        </form>
       </div>
     </section>
+  </main>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-5" data-aos="fade-right">
-            <div class="eyebrow">// contact.env</div>
-            <h2 class="section-title">Mari berkolaborasi</h2>
-            <p class="section-sub" style="max-width: 100%">
-              Terbuka untuk diskusi proyek, kolaborasi, atau sekadar bertukar
-              ide soal pengembangan sistem. Isi form di samping atau hubungi
-              lewat kanal berikut.
-            </p>
-            <div class="social-row mt-4">
-              <a
-                href="https://github.com/stoncuan"
-                target="_blank"
-                title="GitHub"
-                data-aos="zoom-in"
-                data-aos-delay="0"
-                ><i class="bi bi-github"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/stoncuan"
-                target="_blank"
-                title="LinkedIn"
-                data-aos="zoom-in"
-                data-aos-delay="60"
-                ><i class="bi bi-linkedin"></i
-              ></a>
-              <a
-                href="https://wa.me/6285244209946"
-                target="_blank"
-                rel="noopener"
-                title="WhatsApp"
-                data-aos="zoom-in"
-                data-aos-delay="120"
-                ><i class="bi bi-whatsapp"></i
-              ></a>
-              <a
-                href="mailto:smacpalbawangun@gmail.com"
-                target="_blank"
-                title="Email"
-                data-aos="zoom-in"
-                data-aos-delay="180"
-                ><i class="bi bi-envelope"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-lg-7" data-aos="fade-left">
-            <div class="contact-card">
-              <form id="contactForm">
-                <div class="mb-3" data-aos="fade-up" data-aos-delay="0">
-                  <label class="d-block">NAMA</label>
-                  <input
-                    id="contactName"
-                    type="text"
-                    class="form-control form-control-custom"
-                    placeholder="nama_anda"
-                    required
-                  />
-                </div>
-                <div class="mb-3" data-aos="fade-up" data-aos-delay="80">
-                  <label class="d-block">EMAIL</label>
-                  <input
-                    id="contactEmail"
-                    type="email"
-                    class="form-control form-control-custom"
-                    placeholder="email@contoh.com"
-                    required
-                  />
-                </div>
-                <div class="mb-3" data-aos="fade-up" data-aos-delay="160">
-                  <label class="d-block">PESAN</label>
-                  <textarea
-                    id="contactMessage"
-                    class="form-control form-control-custom"
-                    rows="4"
-                    placeholder="Tulis pesan di sini..."
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="btn-send"
-                  data-aos="fade-up"
-                  data-aos-delay="240"
-                >
-                  <i class="bi bi-send me-1"></i>Kirim Pesan
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <footer>
+    <div class="wrap foot">
+      <span>© <span id="yr">2026</span> Stoncuan Macpal Bawangun</span>
+      <a href="#home">Kembali ke atas</a>
+    </div>
+  </footer>
 
-    <footer>
-      <div
-        class="container d-flex flex-wrap justify-content-between align-items-center gap-2"
-        data-aos="fade-up"
-      >
-        <div>© 2026 Stoncuan.</div>
-        <div>console.log("terima kasih sudah mampir!")</div>
-      </div>
-    </footer>
-
-    <a href="#home" class="back-to-top" id="backToTop"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
-    <script>
-      // Kirim form kontak ke WhatsApp — taruh paling atas, wajib jalan duluan
-      const contactForm = document.getElementById("contactForm");
-      if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const nama = document.getElementById("contactName").value.trim();
-          const email = document.getElementById("contactEmail").value.trim();
-          const pesan = document.getElementById("contactMessage").value.trim();
-
-          const teks =
-            "Halo, saya ingin menghubungi Anda lewat form portofolio.%0A%0A" +
-            "Nama: " +
-            encodeURIComponent(nama) +
-            "%0A" +
-            "Email: " +
-            encodeURIComponent(email) +
-            "%0A" +
-            "Pesan: " +
-            encodeURIComponent(pesan);
-
-          const nomorWA = "6285244209946";
-          window.open("https://wa.me/" + nomorWA + "?text=" + teks, "_blank");
-        });
-      }
-
-      try {
-        AOS.init({ duration: 700, once: true, easing: "ease-out-cubic" });
-      } catch (err) {
-        console.warn("AOS gagal dimuat:", err);
-      }
-
-      const nav = document.querySelector(".navbar-custom");
-      const backToTop = document.getElementById("backToTop");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 40) {
-          nav.classList.add("scrolled");
-        } else {
-          nav.classList.remove("scrolled");
-        }
-        if (window.scrollY > 500) {
-          backToTop.classList.add("show");
-        } else {
-          backToTop.classList.remove("show");
-        }
-      });
-
-      try {
-        if (document.getElementById("typed-heading")) {
-          new Typed("#typed-heading", {
-            strings: [
-              'Membangun sistem,<br />baris demi <span class="accent">baris.</span>',
-            ],
-            typeSpeed: 55,
-            backSpeed: 30,
-            backDelay: 2200,
-            startDelay: 200,
-            smartBackspace: false,
-            contentType: "html",
-            loop: true,
-          });
-        }
-      } catch (err) {
-        console.warn("Typed.js heading gagal dimuat:", err);
-      }
-
-      try {
-        if (document.getElementById("typed-role")) {
-          new Typed("#typed-role", {
-            strings: [
-              "Full-Stack Web Developer",
-              "Laravel Dan CodeIgniter",
-              "Perancangan Sistem Informasi",
-              "Database Dan API Integration",
-              "Bootstrap Dan Livewire",
-              "Linux / Nginx / Apache HTTP Server",
-            ],
-            typeSpeed: 45,
-            backSpeed: 25,
-            backDelay: 1800,
-            loop: true,
-          });
-        }
-      } catch (err) {
-        console.warn("Typed.js gagal dimuat:", err);
-      }
-
-      // --- Mobile nav modal ---
-      const navToggleBtn = document.getElementById("navToggleBtn");
-      const mobileNavOverlay = document.getElementById("mobileNavOverlay");
-      const mobileNavClose = document.getElementById("mobileNavClose");
-      const mobileNavLinks = document.querySelectorAll("[data-nav-link]");
-
-      function openMobileNav() {
-        mobileNavOverlay.classList.add("show");
-        navToggleBtn.setAttribute("aria-expanded", "true");
-        document.body.classList.add("nav-open");
-      }
-      function closeMobileNav() {
-        mobileNavOverlay.classList.remove("show");
-        navToggleBtn.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("nav-open");
-      }
-
-      if (navToggleBtn) navToggleBtn.addEventListener("click", openMobileNav);
-      if (mobileNavClose)
-        mobileNavClose.addEventListener("click", closeMobileNav);
-      if (mobileNavOverlay) {
-        mobileNavOverlay.addEventListener("click", (e) => {
-          if (e.target === mobileNavOverlay) closeMobileNav();
-        });
-      }
-      mobileNavLinks.forEach((link) =>
-        link.addEventListener("click", closeMobileNav),
-      );
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMobileNav();
-      });
-      window.addEventListener("resize", () => {
-        if (window.innerWidth >= 992) closeMobileNav();
-      });
-    </script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
