@@ -102,7 +102,7 @@ const PROJECTS = [
   },
   {
     t: "SIKAT UNIPA",
-    v: "v6.0.0",
+    v: "v5.1.0",
     y: 2025,
     i: "Img/sikat.png",
     u: "https://sikat.unipa.ac.id/login",
@@ -427,6 +427,174 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
   }
 });
 syncBtn();
+
+// ====== Dokumentasi foto — ISI DI SINI ======
+// 1) Taruh foto di folder Img/dokumentasi/
+// 2) Daftarkan satu baris per foto: { src: "Img/dokumentasi/nama-file.jpg", cap: "Keterangan singkat (opsional)" }
+const DOCS = {
+  jaringan: {
+    label: "Jaringan & instalasi",
+    photos: [
+      {
+        src: "Img/dokumentasi/instalasi_jaringan1.jpg",
+        cap: "Instalasi jaringan",
+      },
+      {
+        src: "Img/dokumentasi/instalasi_jaringan2.jpg",
+        cap: "Instalasi jaringan",
+      },
+      {
+        src: "Img/dokumentasi/instalasi_jaringan3.jpg",
+        cap: "Instalasi jaringan",
+      },
+      {
+        src: "Img/dokumentasi/instalasi_jaringan4.jpg",
+        cap: "Instalasi jaringan",
+      },
+      {
+        src: "Img/dokumentasi/instalasi_jaringan5.jpg",
+        cap: "Instalasi jaringan",
+      },
+      {
+        src: "Img/dokumentasi/instalasi_jaringan6.jpg",
+        cap: "Instalasi jaringan",
+      },
+    ],
+  },
+  perbaikan: {
+    label: "Perbaikan hardware & software",
+    photos: [
+      {
+        src: "Img/dokumentasi/Perbaikan_hardware1.jpg",
+        cap: "Perbaikan hardware",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_hardware2.jpg",
+        cap: "Perbaikan hardware",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_hardware3.jpg",
+        cap: "Perbaikan hardware",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_hardware4.jpg",
+        cap: "Perbaikan hardware",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_hardware5.jpg",
+        cap: "Perbaikan hardware",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_hardware6.jpg",
+        cap: "Perbaikan hardware",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_hardware7.jpg",
+        cap: "Perbaikan hardware",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_software1.jpg",
+        cap: "Perbaikan software",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_software2.jpg",
+        cap: "Perbaikan software",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_software3.jpg",
+        cap: "Perbaikan software",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_software4.jpg",
+        cap: "Perbaikan software",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_software5.jpg",
+        cap: "Perbaikan software",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_software6.jpg",
+        cap: "Perbaikan software",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_software7.jpeg",
+        cap: "Perbaikan software",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_software8.jpeg",
+        cap: "Perbaikan software",
+      },
+      {
+        src: "Img/dokumentasi/Perbaikan_software9.jpg",
+        cap: "Perbaikan software",
+      },
+    ],
+  },
+};
+
+let docKey = "jaringan";
+function showDoc(key) {
+  docKey = key;
+  const list = DOCS[key].photos;
+  document
+    .querySelectorAll(".tab")
+    .forEach((t) => t.setAttribute("aria-pressed", t.dataset.k === key));
+  $("#docGrid").innerHTML = list.length
+    ? list
+        .map(
+          (p, i) =>
+            `<button class="doc" type="button" data-i="${i}" aria-label="Perbesar foto${p.cap ? ": " + esc(p.cap) : ""}">
+           <img src="${esc(p.src)}" alt="${esc(p.cap || DOCS[key].label)}" loading="lazy" />${p.cap ? `<span>${esc(p.cap)}</span>` : ""}
+         </button>`,
+        )
+        .join("")
+    : `<div class="doc-empty"><i class="bi bi-camera"></i><p>Dokumentasi foto segera ditambahkan.</p></div>`;
+  reveal($("#docGrid").children, 60, 4);
+}
+$("#docTabs").innerHTML = Object.keys(DOCS)
+  .map(
+    (k) =>
+      `<button class="tab" type="button" data-k="${k}">${esc(DOCS[k].label)}</button>`,
+  )
+  .join("");
+$("#docTabs").addEventListener("click", (e) => {
+  const b = e.target.closest(".tab");
+  if (b) showDoc(b.dataset.k);
+});
+// Tombol "Lihat dokumentasi" pada kartu keahlian membuka tab yang sesuai
+document
+  .querySelectorAll("[data-tab]")
+  .forEach((a) => a.addEventListener("click", () => showDoc(a.dataset.tab)));
+showDoc("jaringan");
+
+// Lightbox foto
+const lb = $("#lb");
+let lbI = 0;
+function lbShow(i) {
+  const list = DOCS[docKey].photos;
+  lbI = (i + list.length) % list.length;
+  const p = list[lbI];
+  $("#lbImg").src = p.src;
+  $("#lbImg").alt = p.cap || DOCS[docKey].label;
+  $("#lbCap").textContent =
+    (p.cap ? p.cap + " · " : "") + (lbI + 1) + " / " + list.length;
+}
+$("#docGrid").addEventListener("click", (e) => {
+  const b = e.target.closest(".doc");
+  if (!b) return;
+  lbShow(+b.dataset.i);
+  lb.showModal();
+});
+$("#lbPrev").addEventListener("click", () => lbShow(lbI - 1));
+$("#lbNext").addEventListener("click", () => lbShow(lbI + 1));
+$("#lbX").addEventListener("click", () => lb.close());
+lb.addEventListener("click", (e) => {
+  if (e.target === lb) lb.close();
+});
+lb.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") lbShow(lbI + 1);
+  if (e.key === "ArrowLeft") lbShow(lbI - 1);
+});
 
 // ====== Menu hamburger (mobile) ======
 const navBtn = $("#navBtn");
