@@ -1,231 +1,440 @@
 <!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stoncuan Macpal Bawangun — Full-Stack Web Developer | Portofolio</title>
-  <meta name="description" content="Stoncuan Macpal Bawangun adalah full-stack web developer di UPA TIK Universitas Papua. Membangun sistem informasi dengan Laravel, CodeIgniter, dan Livewire." />
-  <meta name="author" content="Stoncuan Macpal Bawangun" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://stoncuan.netlify.app/" />
-  <!-- Open Graph / Twitter: tampilan saat link dibagikan -->
-  <meta property="og:type" content="profile" />
-  <meta property="og:site_name" content="Stoncuan Macpal Bawangun" />
-  <meta property="og:title" content="Stoncuan Macpal Bawangun — Full-Stack Web Developer" />
-  <meta property="og:description" content="Stoncuan Macpal Bawangun adalah full-stack web developer di UPA TIK Universitas Papua. Membangun sistem informasi dengan Laravel, CodeIgniter, dan Livewire." />
-  <meta property="og:url" content="https://stoncuan.netlify.app/" />
-  <meta property="og:image" content="https://stoncuan.netlify.app/Img/profil.png" />
-  <meta property="og:locale" content="id_ID" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stoncuan Macpal Bawangun — Full-Stack Web Developer" />
-  <meta name="twitter:description" content="Stoncuan Macpal Bawangun adalah full-stack web developer di UPA TIK Universitas Papua. Membangun sistem informasi dengan Laravel, CodeIgniter, dan Livewire." />
-  <meta name="twitter:image" content="https://stoncuan.netlify.app/Img/profil.png" />
-  <!-- Data terstruktur agar Google mengenali ini halaman profil seseorang -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Stoncuan Macpal Bawangun",
-  "url": "https://stoncuan.netlify.app/",
-  "image": "https://stoncuan.netlify.app/Img/profil.png",
-  "jobTitle": "Full-Stack Web Developer",
-  "description": "Stoncuan Macpal Bawangun adalah full-stack web developer di UPA TIK Universitas Papua. Membangun sistem informasi dengan Laravel, CodeIgniter, dan Livewire.",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "UPA Teknologi Informasi dan Komunikasi, Universitas Papua"
-  },
-  "knowsAbout": [
-    "Laravel",
-    "CodeIgniter",
-    "Livewire",
-    "PHP",
-    "MySQL",
-    "Bootstrap",
-    "JavaScript",
-    "Konfigurasi jaringan"
-  ],
-  "sameAs": [
-    "https://github.com/stoncuan",
-    "https://www.linkedin.com/in/stoncuan"
-  ]
-}
-  </script>
-  <link rel="icon" type="image/png" href="img/logo.png" />
-  <meta name="color-scheme" content="light dark" />
-  <!-- Terapkan tema sebelum halaman tergambar agar tidak berkedip -->
-  <script>
-    (function () {
-      var t = null;
-      try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "light" && t !== "dark") {
-        t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Stoncuan Macpal Bawangun — Full-Stack Web Developer | Portofolio
+    </title>
+    <meta
+      name="description"
+      content="Stoncuan Macpal Bawangun adalah full-stack web developer di UPA TIK Universitas Papua. Membangun sistem informasi dengan Laravel, CodeIgniter, dan Livewire."
+    />
+    <meta name="author" content="Stoncuan Macpal Bawangun" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://stoncuan.netlify.app/" />
+    <!-- Open Graph / Twitter: tampilan saat link dibagikan -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Stoncuan Macpal Bawangun" />
+    <meta
+      property="og:title"
+      content="Stoncuan Macpal Bawangun — Full-Stack Web Developer"
+    />
+    <meta
+      property="og:description"
+      content="Stoncuan Macpal Bawangun adalah full-stack web developer di UPA TIK Universitas Papua. Membangun sistem informasi dengan Laravel, CodeIgniter, dan Livewire."
+    />
+    <meta property="og:url" content="https://stoncuan.netlify.app/" />
+    <meta
+      property="og:image"
+      content="https://stoncuan.netlify.app/Img/profil.png"
+    />
+    <meta property="og:locale" content="id_ID" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Stoncuan Macpal Bawangun — Full-Stack Web Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Stoncuan Macpal Bawangun adalah full-stack web developer di UPA TIK Universitas Papua. Membangun sistem informasi dengan Laravel, CodeIgniter, dan Livewire."
+    />
+    <meta
+      name="twitter:image"
+      content="https://stoncuan.netlify.app/Img/profil.png"
+    />
+    <!-- Data terstruktur agar Google mengenali ini halaman profil seseorang -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Stoncuan Macpal Bawangun",
+        "url": "https://stoncuan.netlify.app/",
+        "image": "https://stoncuan.netlify.app/Img/profil.png",
+        "jobTitle": "Full-Stack Web Developer",
+        "description": "Stoncuan Macpal Bawangun adalah full-stack web developer di UPA TIK Universitas Papua. Membangun sistem informasi dengan Laravel, CodeIgniter, dan Livewire.",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "UPA Teknologi Informasi dan Komunikasi, Universitas Papua"
+        },
+        "knowsAbout": [
+          "Laravel",
+          "CodeIgniter",
+          "Livewire",
+          "PHP",
+          "MySQL",
+          "Bootstrap",
+          "JavaScript",
+          "Konfigurasi jaringan"
+        ],
+        "sameAs": [
+          "https://github.com/stoncuan",
+          "https://www.linkedin.com/in/stoncuan"
+        ]
       }
-      document.documentElement.setAttribute("data-theme", t);
-    })();
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="top">
-    <div class="wrap top-in">
-      <a href="#home" class="brand">Stoncuan<span>.</span></a>
-      <nav class="menu" id="menu" aria-label="Navigasi utama">
-        <a href="#about">Tentang</a>
-        <a href="#skills">Skill</a>
-        <a href="#docs">Dokumentasi</a>
-        <a href="#projects">Proyek</a>
-        <a href="#experience">Pengalaman</a>
-        <a href="#contact">Kontak</a>
-      </nav>
-      <button id="themeBtn" class="theme-btn" type="button" aria-label="Ganti ke mode gelap" title="Ganti tema">
-        <i class="bi bi-moon-stars-fill icon-moon"></i>
-        <i class="bi bi-sun-fill icon-sun"></i>
-      </button>
-      <button id="navBtn" class="theme-btn burger" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="menu">
-        <i class="bi bi-list"></i>
-      </button>
-    </div>
-  </header>
+    </script>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Terapkan tema sebelum halaman tergambar agar tidak berkedip -->
+    <script>
+      (function () {
+        var t = null;
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap top-in">
+        <a href="#home" class="brand">Stoncuan<span>.</span></a>
+        <nav class="menu" id="menu" aria-label="Navigasi utama">
+          <a href="#about">Tentang</a>
+          <a href="#skills">Skill</a>
+          <a href="#docs">Dokumentasi</a>
+          <a href="#projects">Proyek</a>
+          <a href="#experience">Pengalaman</a>
+          <a href="#contact">Kontak</a>
+        </nav>
+        <button
+          id="themeBtn"
+          class="theme-btn"
+          type="button"
+          aria-label="Ganti ke mode gelap"
+          title="Ganti tema"
+        >
+          <i class="bi bi-moon-stars-fill icon-moon"></i>
+          <i class="bi bi-sun-fill icon-sun"></i>
+        </button>
+        <button
+          id="navBtn"
+          class="theme-btn burger"
+          type="button"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="menu"
+        >
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </header>
 
-  <main>
-    <section class="hero" id="home">
-      <canvas id="particles" aria-hidden="true"></canvas>
-      <div class="wrap hero-grid">
-        <div class="hero-text">
-          <p class="kicker">Stoncuan Macpal Bawangun · Full-Stack Web Developer</p>
-          <h1>Sistem informasi kampus yang dipakai setiap hari, dibangun dari nol.</h1>
-          <p class="lead">Saya merancang database, menulis logika server, dan memoles antarmuka untuk surat-menyurat, keuangan, perpustakaan, hingga data kependudukan.</p>
-          <div class="cta">
-            <a href="#projects" class="btn btn-solid">Lihat proyek</a>
-            <a href="#contact" class="btn btn-line">Hubungi saya</a>
+    <main>
+      <section class="hero" id="home">
+        <canvas id="particles" aria-hidden="true"></canvas>
+        <div class="wrap hero-grid">
+          <div class="hero-text">
+            <p class="kicker">
+              Stoncuan Macpal Bawangun · Full-Stack Web Developer
+            </p>
+            <h1>
+              Sistem informasi kampus yang dipakai setiap hari, dibangun dari
+              nol.
+            </h1>
+            <p class="lead">
+              Saya merancang database, menulis logika server, dan memoles
+              antarmuka untuk surat-menyurat, keuangan, perpustakaan, hingga
+              data kependudukan.
+            </p>
+            <div class="cta">
+              <a href="#projects" class="btn btn-solid">Lihat proyek</a>
+              <a href="#contact" class="btn btn-line">Hubungi saya</a>
+            </div>
+          </div>
+          <figure
+            class="frame hero-frame carousel"
+            id="carousel"
+            tabindex="0"
+            aria-roledescription="carousel"
+            aria-label="Galeri proyek"
+          >
+            <div class="frame-bar">
+              <i></i><i></i><i></i><span id="heroHost"></span>
+            </div>
+            <div class="slides" id="slides" aria-live="off"></div>
+            <div class="car-ctl">
+              <button id="prev" type="button" aria-label="Proyek sebelumnya">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <div class="track"><div class="bar" id="bar"></div></div>
+              <span class="count" id="count"></span>
+              <button id="next" type="button" aria-label="Proyek berikutnya">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+            <figcaption id="heroCap"></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="about" class="sec">
+        <div class="wrap about">
+          <img
+            class="photo"
+            src="Img/profil.png"
+            alt="Foto Stoncuan Macpal Bawangun"
+          />
+          <div>
+            <h2>Mulai dari SMK, sekarang merawat sistem produksi</h2>
+            <p>
+              Saya menekuni pengembangan web sejak SMK dan kini menangani sistem
+              informasi institusional: registrasi, manajemen surat, keuangan,
+              validasi surat, peminjaman barang, dan data kependudukan. Saya
+              nyaman bekerja di semua lapisan, dari skema database sampai
+              interaksi di browser.
+            </p>
+            <dl class="stats">
+              <div>
+                <dt>Sistem aktif</dt>
+                <dd>17</dd>
+              </div>
+              <div>
+                <dt>Tahun pengalaman</dt>
+                <dd>2+</dd>
+              </div>
+            </dl>
           </div>
         </div>
-        <figure class="frame hero-frame carousel" id="carousel" tabindex="0" aria-roledescription="carousel" aria-label="Galeri proyek">
-          <div class="frame-bar"><i></i><i></i><i></i><span id="heroHost"></span></div>
-          <div class="slides" id="slides" aria-live="off"></div>
-          <div class="car-ctl">
-            <button id="prev" type="button" aria-label="Proyek sebelumnya"><i class="bi bi-chevron-left"></i></button>
-            <div class="track"><div class="bar" id="bar"></div></div>
-            <span class="count" id="count"></span>
-            <button id="next" type="button" aria-label="Proyek berikutnya"><i class="bi bi-chevron-right"></i></button>
-          </div>
-          <figcaption id="heroCap"></figcaption>
-        </figure>
-      </div>
-    </section>
+      </section>
 
-    <section id="about" class="sec">
-      <div class="wrap about">
-        <img class="photo" src="Img/profil.png" alt="Foto Stoncuan Macpal Bawangun" />
-        <div>
-          <h2>Mulai dari SMK, sekarang merawat sistem produksi</h2>
-          <p>Saya menekuni pengembangan web sejak SMK dan kini menangani sistem informasi institusional: registrasi, manajemen surat, keuangan, validasi surat, peminjaman barang, dan data kependudukan. Saya nyaman bekerja di semua lapisan, dari skema database sampai interaksi di browser.</p>
-          <dl class="stats">
-            <div><dt>Sistem aktif</dt><dd>14</dd></div>
-            <div><dt>Tahun pengalaman</dt><dd>2+</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="sec alt">
-      <div class="wrap">
-        <h2>Tools yang saya pakai</h2>
-        <p class="sub">Stack yang konsisten lintas proyek, dari sistem internal kampus sampai eksperimen pribadi.</p>
-        <div class="skills">
-          <div class="card"><h3>Backend</h3><ul><li>PHP</li><li>Laravel</li><li>CodeIgniter</li></ul></div>
-          <div class="card"><h3>Frontend</h3><ul><li>HTML &amp; CSS</li><li>JavaScript</li><li>Bootstrap 5</li><li>Livewire</li></ul></div>
-          <div class="card"><h3>Database &amp; tools</h3><ul><li>MySQL</li><li>Git</li><li>Composer</li><li>npm</li><li>Postman</li><li>Linux</li><li>Nginx</li><li>Apache</li></ul></div>
-          <div class="card wide">
-            <h3>Jaringan &amp; instalasi</h3>
-            <p class="card-p">Konfigurasi jaringan dan instalasi perangkat, lengkap dengan dokumentasi foto pekerjaannya.</p>
-            <ul><li>Konfigurasi jaringan</li><li>Instalasi</li></ul>
-            <a href="#docs" class="card-link" data-tab="jaringan">Lihat dokumentasi <i class="bi bi-arrow-right"></i></a>
-          </div>
-          <div class="card wide">
-            <h3>Perbaikan hardware &amp; software</h3>
-            <p class="card-p">Perbaikan perangkat keras dan perangkat lunak, didokumentasikan lewat foto.</p>
-            <ul><li>Perbaikan hardware</li><li>Perbaikan software</li></ul>
-            <a href="#docs" class="card-link" data-tab="perbaikan">Lihat dokumentasi <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="docs" class="sec">
-      <div class="wrap">
-        <h2>Dokumentasi pekerjaan</h2>
-        <p class="sub">Foto dokumentasi konfigurasi jaringan dan instalasi, serta perbaikan hardware dan software. Klik foto untuk memperbesar.</p>
-        <div class="filters" id="docTabs" role="group" aria-label="Kategori dokumentasi"></div>
-        <div class="docs" id="docGrid"></div>
-      </div>
-    </section>
-
-    <section id="projects" class="sec alt">
-      <div class="wrap">
-        <h2>Proyek yang sudah di-deploy</h2>
-        <p class="sub">Sistem yang pernah saya bangun dan rawat. Klik kartu untuk membuka versi live.</p>
-        <div class="filters" id="filters" role="group" aria-label="Filter proyek"></div>
-        <div class="grid" id="grid"></div>
-      <noscript><ul><li>E-NADIN UPA TIK UNIPA</li><li>SIMKATMAWA UNIPA</li><li>SIMDUK WONDAMA</li><li>Perpustakaan UNIPA</li><li>Kerjasama UNIPA</li><li>Validasi Surat Rektor UNIPA</li><li>Validasi Surat WR1 UNIPA</li><li>Validasi Surat UPA TIK UNIPA</li><li>Aplikasi Surat Elektronik UNIPA</li><li>Aplikasi Surat Elektronik FKIP UNIPA</li><li>Landing Page Simunipa</li><li>SIKAT UNIPA</li><li>SIBARA UNIPA</li><li>Pengumuman Data Center UNIPA</li><li>Lapor Diri PPG</li><li>Portal Registrasi &amp; Pengaduan Mahasiswa</li><li>Web Login Unipenet</li></ul></noscript>
-      </div>
-    </section>
-
-    <section id="experience" class="sec">
-      <div class="wrap narrow">
-        <h2>Pengalaman</h2>
-        <article class="job">
-          <time>2024 — sekarang</time>
-          <h3>IT Administrator &amp; Full-Stack Developer</h3>
-          <p class="org">UPA Teknologi Informasi dan Komunikasi UNIPA</p>
-          <p>Mengembangkan dan merawat sistem informasi institusional, mulai dari perancangan database dan keamanan aplikasi sampai deployment.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="sec alt">
-      <div class="wrap contact">
-        <div>
-          <h2>Mari berkolaborasi</h2>
-          <p class="sub">Terbuka untuk diskusi proyek, kolaborasi, atau bertukar ide soal pengembangan sistem. Pesan dari form akan dibuka di WhatsApp.</p>
-          <div class="social">
-            <a href="https://github.com/stoncuan" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/stoncuan" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://wa.me/6285244209946" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-            <a href="mailto:smacpalbawangun@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+      <section id="skills" class="sec alt">
+        <div class="wrap">
+          <h2>Tools yang saya pakai</h2>
+          <p class="sub">
+            Stack yang konsisten lintas proyek, dari sistem internal kampus
+            sampai eksperimen pribadi.
+          </p>
+          <div class="skills">
+            <div class="card">
+              <h3>Backend</h3>
+              <ul>
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>CodeIgniter</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Frontend</h3>
+              <ul>
+                <li>HTML &amp; CSS</li>
+                <li>JavaScript</li>
+                <li>Bootstrap 5</li>
+                <li>Livewire</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Database &amp; tools</h3>
+              <ul>
+                <li>MySQL</li>
+                <li>Git</li>
+                <li>Composer</li>
+                <li>npm</li>
+                <li>Postman</li>
+                <li>Linux</li>
+                <li>Nginx</li>
+                <li>Apache</li>
+              </ul>
+            </div>
+            <div class="card wide">
+              <h3>Jaringan &amp; instalasi</h3>
+              <p class="card-p">
+                Konfigurasi jaringan dan instalasi perangkat, lengkap dengan
+                dokumentasi foto pekerjaannya.
+              </p>
+              <ul>
+                <li>Konfigurasi jaringan</li>
+                <li>Instalasi</li>
+              </ul>
+              <a href="#docs" class="card-link" data-tab="jaringan"
+                >Lihat dokumentasi <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+            <div class="card wide">
+              <h3>Perbaikan hardware &amp; software</h3>
+              <p class="card-p">
+                Perbaikan perangkat keras dan perangkat lunak, didokumentasikan
+                lewat foto.
+              </p>
+              <ul>
+                <li>Perbaikan hardware</li>
+                <li>Perbaikan software</li>
+              </ul>
+              <a href="#docs" class="card-link" data-tab="perbaikan"
+                >Lihat dokumentasi <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
           </div>
         </div>
-        <form id="contactForm" class="card form">
-          <label>Nama<input id="cName" type="text" autocomplete="name" required /></label>
-          <label>Email<input id="cEmail" type="email" autocomplete="email" required /></label>
-          <label>Pesan<textarea id="cMsg" rows="4" required></textarea></label>
-          <button type="submit" class="btn btn-solid">Kirim lewat WhatsApp</button>
-        </form>
+      </section>
+
+      <section id="docs" class="sec">
+        <div class="wrap">
+          <h2>Dokumentasi pekerjaan</h2>
+          <p class="sub">
+            Foto dokumentasi konfigurasi jaringan dan instalasi, serta perbaikan
+            hardware dan software. Klik foto untuk memperbesar.
+          </p>
+          <div
+            class="filters"
+            id="docTabs"
+            role="group"
+            aria-label="Kategori dokumentasi"
+          ></div>
+          <div class="docs" id="docGrid"></div>
+        </div>
+      </section>
+
+      <section id="projects" class="sec alt">
+        <div class="wrap">
+          <h2>Proyek yang sudah di-deploy</h2>
+          <p class="sub">
+            Sistem yang pernah saya bangun dan rawat. Klik kartu untuk membuka
+            versi live.
+          </p>
+          <div
+            class="filters"
+            id="filters"
+            role="group"
+            aria-label="Filter proyek"
+          ></div>
+          <div class="grid" id="grid"></div>
+          <noscript
+            ><ul>
+              <li>E-NADIN UPA TIK UNIPA</li>
+              <li>SIMKATMAWA UNIPA</li>
+              <li>SIMDUK WONDAMA</li>
+              <li>Perpustakaan UNIPA</li>
+              <li>Kerjasama UNIPA</li>
+              <li>Validasi Surat Rektor UNIPA</li>
+              <li>Validasi Surat WR1 UNIPA</li>
+              <li>Validasi Surat UPA TIK UNIPA</li>
+              <li>Aplikasi Surat Elektronik UNIPA</li>
+              <li>Aplikasi Surat Elektronik FKIP UNIPA</li>
+              <li>Landing Page Simunipa</li>
+              <li>SIKAT UNIPA</li>
+              <li>SIBARA UNIPA</li>
+              <li>Pengumuman Data Center UNIPA</li>
+              <li>Lapor Diri PPG</li>
+              <li>Portal Registrasi &amp; Pengaduan Mahasiswa</li>
+              <li>Web Login Unipenet</li>
+            </ul></noscript
+          >
+        </div>
+      </section>
+
+      <section id="experience" class="sec">
+        <div class="wrap narrow">
+          <h2>Pengalaman</h2>
+          <article class="job">
+            <time>2024 — sekarang</time>
+            <h3>IT Administrator &amp; Full-Stack Developer</h3>
+            <p class="org">UPA Teknologi Informasi dan Komunikasi UNIPA</p>
+            <p>
+              Mengembangkan dan merawat sistem informasi institusional, mulai
+              dari perancangan database dan keamanan aplikasi sampai deployment.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="sec alt">
+        <div class="wrap contact">
+          <div>
+            <h2>Mari berkolaborasi</h2>
+            <p class="sub">
+              Terbuka untuk diskusi proyek, kolaborasi, atau bertukar ide soal
+              pengembangan sistem. Pesan dari form akan dibuka di WhatsApp.
+            </p>
+            <div class="social">
+              <a
+                href="https://github.com/stoncuan"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/stoncuan"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a
+                href="https://wa.me/6285244209946"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+                ><i class="bi bi-whatsapp"></i
+              ></a>
+              <a href="mailto:smacpalbawangun@gmail.com" aria-label="Email"
+                ><i class="bi bi-envelope"></i
+              ></a>
+            </div>
+          </div>
+          <form id="contactForm" class="card form">
+            <label
+              >Nama<input id="cName" type="text" autocomplete="name" required
+            /></label>
+            <label
+              >Email<input
+                id="cEmail"
+                type="email"
+                autocomplete="email"
+                required
+            /></label>
+            <label
+              >Pesan<textarea id="cMsg" rows="4" required></textarea>
+            </label>
+            <button type="submit" class="btn btn-solid">
+              Kirim lewat WhatsApp
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap foot">
+        <span>© <span id="yr">2026</span> Stoncuan Macpal Bawangun</span>
+        <a href="#home">Kembali ke atas</a>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer>
-    <div class="wrap foot">
-      <span>© <span id="yr">2026</span> Stoncuan Macpal Bawangun</span>
-      <a href="#home">Kembali ke atas</a>
-    </div>
-  </footer>
+    <dialog id="lb" class="lb" aria-label="Pratinjau foto">
+      <img id="lbImg" alt="" />
+      <div class="lb-bar">
+        <button id="lbPrev" type="button" aria-label="Foto sebelumnya">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <span id="lbCap"></span>
+        <button id="lbNext" type="button" aria-label="Foto berikutnya">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+        <button id="lbX" type="button" aria-label="Tutup">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+    </dialog>
 
-  <dialog id="lb" class="lb" aria-label="Pratinjau foto">
-    <img id="lbImg" alt="" />
-    <div class="lb-bar">
-      <button id="lbPrev" type="button" aria-label="Foto sebelumnya"><i class="bi bi-chevron-left"></i></button>
-      <span id="lbCap"></span>
-      <button id="lbNext" type="button" aria-label="Foto berikutnya"><i class="bi bi-chevron-right"></i></button>
-      <button id="lbX" type="button" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
-    </div>
-  </dialog>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
